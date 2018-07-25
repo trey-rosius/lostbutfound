@@ -1,0 +1,24 @@
+<div align="center">
+<h1>Have You Lost Something?<h1>
+<h3> Search With Your Names</h3>
+<div id="stock-lookup">
+<%= form_tag "search_products_path", remote: true, method: :get, id: "friend-lookup-form" do%>
+
+<div class="form-group row no-padding text-center col-md-12">
+<div class="col-md-8 col-xs-offset-2">
+<%= text_field_tag :search_param, params[:search_param], placeholder: "Search With Your Name", autofocus: true,
+                           class: "form-control search-box input-lg"%>
+ </div>  
+<div class="col-md-2">
+  <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do%> 
+ <i class="fa fa-search"></i> Search
+  <% end %>
+                       
+</div>
+
+</div>
+<% end %>
+<div id="results">
+<%= render 'home/result'%>
+</div>
+</div>

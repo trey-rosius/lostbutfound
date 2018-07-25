@@ -15,3 +15,118 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import 'normalize';
+
+ #logo{
+    float: left;
+    font-size: 1.7em;
+    color:#50C878;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+#navbar{
+    background:  #50C878;
+}
+#logo:hover{
+    color: #eaeaea;
+    text-decoration: none;
+}
+.center{
+    text-align: center;
+}
+.side{
+    margin-top: 70px;
+}
+.article-meta-details{
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+}
+.article-actions{
+    border-top:1px solid #eaeaea;
+    padding-top:5px;
+}
+.description{
+    margin-top: 0;
+}
+.location-style{
+    //font-weight: bold;
+
+    font-size: 18px;
+    color: lightseagreen
+}
+.article-title{
+font-weight: bold;
+font-size: 1.5em;
+}
+.article-body{
+    border-top: 1px solid #eaeaea;
+    padding-top:15px;
+    padding-bottom:15px;
+
+}
+.listings{
+    list-style: none;
+    padding-left: 0;
+}
+
+.badge{
+    background-color:lightblue;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-right: 3px;
+    font-weight: bold;
+    text-emphasis-color: white
+    
+}
+.input_checkbox input{
+    width: auto !important;
+}
+footer{
+    margin-top:45px;
+    padding-top:5px;
+    border-top:1px solid #eaeaea;
+    color: #777;
+
+}
+footer a:hover{
+    color:#222;
+}
+footer small{
+    float: left;
+}
+footer ul{
+    float: right;
+    list-style: none;
+}
+footer ul li{
+    float: left;
+    margin-left: 15px;
+}
+.results-block{
+    display: inline-block
+   }
+   .no-padding{
+       padding: 0 !important;
+   }
+   .left-padding{
+       padding-left: 15px !important; 
+   }
+   .logout{
+       padding-left: 0;
+   }
+   .user-name{
+       padding-top: 15px
+   }
+   .nav.navbar-right li{
+       .btn{
+           color: #ffffff !important;
+           margin-top: 5%;
+  
+       }
+       .btn-danger:hover{
+           background-color: darken($color: #d9534f, $amount: 20%) !important;
+       }
+   }
+  
