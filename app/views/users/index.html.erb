@@ -14,7 +14,12 @@
 </li>
 <li><small><%= pluralize(user.products.count, "Items") if user.products %></small></li>
 <%# if user_logged_in? and current_user.admin %>
+ <% if user.admin == true %>
 <div class="article-actions">
+<%= link_to "Admin", '#', class: "btn btn-xs btn-default"%> 
+</div>
+ <% else %>
+   <div class="article-actions">
 <% if user_signed_in? and current_user.admin %>
  <% if !user.active %>
    <%= link_to "Disable User", disable_user_path(user), class: "btn btn-xs btn-warning"%> 
@@ -27,6 +32,8 @@
 data: {confirm: "Are you sure you want to delete this user and all their artiles ?" }%>
 <% end %>
 </div>
+ <% end %>
+
 
 </div>
 

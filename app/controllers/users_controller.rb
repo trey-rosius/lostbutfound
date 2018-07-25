@@ -6,7 +6,10 @@ class UsersController < ApplicationController
       before_action :require_admin, only: [:destroy]
       
       def index
+        #  @users = current_user.except_current_user(@users)
+        
         @users = User.paginate(page: params[:page],per_page: 8)
+      
       end
       def new
         @user = User.new
