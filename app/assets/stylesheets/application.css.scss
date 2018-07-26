@@ -26,6 +26,15 @@
     letter-spacing: -1px;
     font-weight: bold;
 }
+#profile_image {
+    width: auto;
+    float: left;
+    margin-right: 2em;
+    img {
+        width: 100%;
+        border-radius: 0.35em;
+    }
+}
 #navbar{
     background:  #50C878;
 }
