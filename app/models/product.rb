@@ -22,7 +22,7 @@ class Product < ApplicationRecord
    end
 
   def self.matches(field_name,param)
-      Product.where("#{field_name} like ?", "%#{param}%")
+      Product.where("#{field_name} ILIKE ?", "%#{param}%")
     end
 
     def self.owner_name_matches(param)
