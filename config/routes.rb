@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users,:controllers => { :registrations => "user/registrations"}
   root "home#index"
   resources :products
+  resources :locations
 resources :users, except: :create
 
 

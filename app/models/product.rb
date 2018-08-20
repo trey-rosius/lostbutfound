@@ -1,10 +1,13 @@
 class Product < ApplicationRecord
   belongs_to :user
+  belongs_to :location
+
 
   validates :name,presence: true, length: {minimum:3, maximum:50}
   validates :details,presence: true, length: {minimum:10, maximum:300}
   validates :user_id, presence: true
-  validates :location, presence:true, length:{minimum:3, maximum: 50}
+  validates :location_id, presence: true
+
 
   def self.search(param)
     param.strip!

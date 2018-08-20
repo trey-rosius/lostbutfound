@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-    has_many :products    
+    has_many :products  
+    belongs_to :location
+    validates :phoneNumber, format: { with: /\A\d+\z/, message: "Integer only. No characters allowed." }
 
     before_save {self.email = email.downcase}
 

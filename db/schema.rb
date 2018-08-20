@@ -10,17 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_072417) do
+ActiveRecord::Schema.define(version: 2018_08_16_092732) do
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "owner_name"
     t.text "details"
-    t.string "location"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "retrieved", default: false
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_products_on_location_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -41,8 +48,11 @@ ActiveRecord::Schema.define(version: 2018_07_27_072417) do
     t.string "last_name"
     t.boolean "admin", default: false
     t.boolean "active", default: false
-    t.string "location"
+    t.integer "location_id"
+    t.string "address"
+    t.string "phoneNumber"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["location_id"], name: "index_users_on_location_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

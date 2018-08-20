@@ -10,7 +10,8 @@
 <%= truncate(product.details, length: 100)%>
 
 <div class="location-style">
-<small> Item Location : <%= product.location%></small>
+<small> Item Location : <%= product.location.name%></small>
+<small> (<%= product.user.address%>)</small>
 </div>
 <div class="article-meta-details">
 

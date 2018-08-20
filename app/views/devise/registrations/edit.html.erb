@@ -22,12 +22,37 @@
       </div>
 <div class="form-group">
       <div class="control-label">
-        <%= f.label :location%>
+        <%= f.label :"Phone Number"%>
         </div>
+        <% if current_user.admin %>
+          
+            <%= f.text_field :phoneNumber, disabled: false, class: 'form-control',placeholder:"Enter User Phone Number"%>
+            <% else %>  
+       <%= f.text_field :phoneNumber, disabled: true, class: 'form-control',placeholder:"Enter User Phone Number"%>
+        <% end %>
         
-        <%= f.text_field :location,  class: 'form-control',placeholder:"Enter Location" %>
      
       </div>
+       <div class="form-group">
+      <div class="control-label">
+        <%= f.label :address%>
+        </div>
+        
+        <%= f.text_field :address,  class: 'form-control',placeholder:"Enter User Address" %>
+     
+      </div>
+      <div class="form-group">
+ <div class="control-label">
+<%= f.label :"Agent Location"%>
+</div>
+  <% if current_user.admin %>
+    <% options = options_from_collection_for_select(Location.all, 'id', 'name') %>
+<%= f.select :location_id,  options %>
+  <% end %>
+
+ 
+  
+</div>
       <div class="form-group">
         <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', default: "leave blank if you don't want to change it") %>)</i>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>

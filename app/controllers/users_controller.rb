@@ -53,7 +53,8 @@ class UsersController < ApplicationController
   
       def disabled
         @user = User.find(params[:id])
-        @user.disable_user
+        @user.toggle!(:active)
+       # @user.disable_user
         if !@user.active
           flash[:success] = "#{@user.full_name}'s account has been successfully activated"
           redirect_to users_path
@@ -71,7 +72,7 @@ class UsersController < ApplicationController
         
       end
       def user_params
-        params.require(:user).permit(:first_name,:last_name,:email,:location,:password)
+        params.require(:user).permit(:first_name,:last_name,:email,:address,:password,:location_id,:phoneNumber)
       end
       def require_same_user
         if current_user != @user and !current_user.admin

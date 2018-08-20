@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
         
         @product = Product.new(product_params)
         @product.user = current_user
+        @product.location = current_user.location
        if @product.save
           flash[:success] = "Product was successfully created"
           redirect_to product_path(@product)
@@ -75,7 +76,7 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
     end
     def product_params
-        params.require(:product).permit(:name,:owner_name,:location,:details)
+        params.require(:product).permit(:name,:owner_name,:details)
     end
     def require_same_user
         if current_user !=  @product.user and !current_user.admin
