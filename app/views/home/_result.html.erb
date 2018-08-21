@@ -19,6 +19,11 @@
 
 <div class="location-style">
 <small> Item Location : <%= product.location.name%></small>
+<small> (<%= product.user.address if product.user%>)</small>
+</div>
+<div class="location-style">
+<small> Contact : <%= product.user.full_name if product.user%></small>
+<small> (Phone Number : <%=product.user.phoneNumber if product.user%>)</small>
 </div>
 <div class="article-meta-details">
 
