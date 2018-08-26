@@ -21,6 +21,7 @@
          <% else %>
            <li><%= link_to "Agents Location", locations_path%></li>  
         <% end %>
+           <li> <%= link_to "Interested ?",contact_path%></li>
       
          <% if user_signed_in? and !current_user.active%>
           <li class="dropdown">

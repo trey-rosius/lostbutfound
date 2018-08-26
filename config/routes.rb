@@ -12,5 +12,6 @@ get 'search_products_path', to: "products#search"
 get 'disable_user/:id', to: "users#disabled", as: 'disable_user'
 get 'retrieved_item/:id', to: "products#retrieved_item", as: 'retrieved_item'
 get '/about', to: 'abouts#about'
+get '/contact', to: 'contacts#contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
